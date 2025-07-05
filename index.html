@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para Ti, Brendita 💖</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #ff6b6b 75%, #feca57 100%);
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 20px;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Efectos de fondo profesionales */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255,255,255,0.15) 0%, transparent 50%),
+        radial-gradient(circle at 40% 60%, rgba(255,255,255,0.1) 0%, transparent 50%);
+      backdrop-filter: blur(1px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .geometric-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.05;
+      background-image: 
+        linear-gradient(45deg, transparent 45%, rgba(255,255,255,0.1) 49%, rgba(255,255,255,0.1) 51%, transparent 55%),
+        linear-gradient(-45deg, transparent 45%, rgba(255,255,255,0.1) 49%, rgba(255,255,255,0.1) 51%, transparent 55%);
+      background-size: 60px 60px;
+      animation: geometricMove 20s ease-in-out infinite;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    @keyframes geometricMove {
+      0%, 100% { transform: translateX(0) translateY(0); }
+      25% { transform: translateX(30px) translateY(-15px); }
+      50% { transform: translateX(-15px) translateY(30px); }
+      75% { transform: translateX(20px) translateY(10px); }
+    }
+
+    .particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .particle {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background: rgba(255,255,255,0.8);
+      border-radius: 50%;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { 
+        opacity: 0; 
+        transform: translateY(0px) translateX(0px) scale(0);
+      }
+      10% { 
+        opacity: 1; 
+        transform: translateY(-10px) translateX(5px) scale(1);
+      }
+      90% { 
+        opacity: 1; 
+        transform: translateY(-100px) translateX(-20px) scale(1);
+      }
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      max-width: 1400px;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Header mejorado */
+    .header-section {
+      margin-bottom: 60px;
+      padding: 40px 0;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(20px);
+      border-radius: 30px;
+      border: 1px solid rgba(255,255,255,0.2);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      color: #fff;
+      font-size: clamp(3rem, 6vw, 5rem);
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 20px;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      letter-spacing: 3px;
+      animation: titleGlow 3s ease-in-out infinite alternate;
+      position: relative;
+    }
+
+    h1::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
+      border-radius: 2px;
+    }
+
+    @keyframes titleGlow {
+      from { 
+        text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        transform: translateY(0px);
+      }
+      to { 
+        text-shadow: 0 4px 20px rgba(255,255,255,0.6), 0 0 40px rgba(255,255,255,0.3);
+        transform: translateY(-2px);
+      }
+    }
+
+    .subtitle {
+      color: rgba(255,255,255,0.95);
+      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+      text-align: center;
+      margin-bottom: 30px;
+      font-weight: 400;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      line-height: 1.6;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Imagen mejorada */
+    .image-container {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 60px;
+    }
+
+    .img-decor {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 6px solid rgba(255,255,255,0.4);
+      box-shadow: 
+        0 20px 40px rgba(0,0,0,0.3),
+        0 0 0 1px rgba(255,255,255,0.1);
+      transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      animation: imageFloat 4s ease-in-out infinite;
+      position: relative;
+      z-index: 2;
+    }
+
+    .img-decor::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      background: conic-gradient(from 0deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3, #ff6b6b);
+      border-radius: 50%;
+      z-index: -1;
+      animation: rotate 6s linear infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes imageFloat {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      25% { transform: translateY(-8px) rotate(1deg); }
+      50% { transform: translateY(-5px) rotate(0deg); }
+      75% { transform: translateY(-12px) rotate(-1deg); }
+    }
+
+    .img-decor:hover {
+      transform: scale(1.15) rotate(5deg);
+      box-shadow: 
+        0 30px 60px rgba(0,0,0,0.4),
+        0 0 0 1px rgba(255,255,255,0.2);
+    }
+
+    /* Sobres rediseñados */
+    .envelopes-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin: 50px 0;
+      padding: 0 20px;
+    }
+
+    .envelope {
+      width: 100%;
+      height: 200px;
+      position: relative;
+      cursor: pointer;
+      border-radius: 20px;
+      transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: 
+        0 15px 35px rgba(0,0,0,0.2),
+        0 5px 15px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transform-style: preserve-3d;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .envelope::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(45deg, 
+        #ff6b6b 0%, 
+        #feca57 25%, 
+        #48dbfb 50%, 
+        #ff9ff3 75%, 
+        #ff6b6b 100%
+      );
+      border-radius: 22px;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .envelope:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 
+        0 25px 50px rgba(0,0,0,0.3),
+        0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    .envelope:hover::before {
+      opacity: 1;
+    }
+
+    .envelope.special {
+      background: linear-gradient(135deg, 
+        rgba(255,215,0,0.3) 0%, 
+        rgba(255,179,71,0.3) 100%
+      );
+      animation: specialPulse 4s ease-in-out infinite;
+    }
+
+    @keyframes specialPulse {
+      0%, 100% { 
+        box-shadow: 
+          0 15px 35px rgba(0,0,0,0.2),
+          0 5px 15px rgba(0,0,0,0.1),
+          0 0 0 0 rgba(255,215,0,0.4);
+      }
+      50% { 
+        box-shadow: 
+          0 15px 35px rgba(0,0,0,0.2),
+          0 5px 15px rgba(0,0,0,0.1),
+          0 0 0 10px rgba(255,215,0,0.2);
+      }
+    }
+
+    .flap {
+      position: absolute;
+      width: 100%;
+      height: 65%;
+      top: 0;
+      left: 0;
+      background: linear-gradient(135deg, 
+        rgba(255,255,255,0.2) 0%, 
+        rgba(255,255,255,0.1) 100%
+      );
+      clip-path: polygon(0 0, 100% 0, 50% 100%);
+      transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      transform-origin: top;
+      z-index: 3;
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .message {
+      position: absolute;
+      background: linear-gradient(135deg, 
+        rgba(255,255,255,0.95) 0%, 
+        rgba(248,249,255,0.95) 100%
+      );
+      color: #2c3e50;
+      width: 100%;
+      height: 100%;
+      padding: 30px;
+      box-sizing: border-box;
+      font-size: 16px;
+      font-weight: 500;
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      opacity: 0;
+      z-index: 2;
+      transition: all 0.8s ease;
+      line-height: 1.6;
+      box-shadow: inset 0 4px 15px rgba(0,0,0,0.1);
+      backdrop-filter: blur(10px);
+    }
+
+    .envelope.open .flap {
+      transform: rotateX(180deg);
+    }
+
+    .envelope.open .message {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Botón de WhatsApp mejorado */
+    .whatsapp-button {
+      margin-top: 60px;
+      background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+      color: white;
+      padding: 25px 50px;
+      border: none;
+      border-radius: 50px;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: 
+        0 15px 30px rgba(37,211,102,0.4),
+        0 5px 15px rgba(37,211,102,0.2);
+      display: inline-flex;
+      align-items: center;
+      gap: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .whatsapp-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.6s ease;
+    }
+
+    .whatsapp-button:hover::before {
+      left: 100%;
+    }
+
+    .whatsapp-button:hover {
+      transform: translateY(-8px) scale(1.05);
+      box-shadow: 
+        0 25px 50px rgba(37,211,102,0.5),
+        0 10px 25px rgba(37,211,102,0.3);
+    }
+
+    /* Control de música mejorado */
+    .music-control {
+      position: fixed;
+      top: 30px;
+      right: 30px;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      cursor: pointer;
+      font-size: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 
+        0 10px 25px rgba(0,0,0,0.2),
+        0 5px 15px rgba(0,0,0,0.1);
+      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      z-index: 10;
+    }
+
+    .music-control:hover {
+      transform: scale(1.1) rotate(10deg);
+      background: rgba(255,255,255,0.25);
+      box-shadow: 
+        0 15px 35px rgba(0,0,0,0.3),
+        0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .music-control.playing {
+      animation: musicPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes musicPulse {
+      0%, 100% { transform: scale(1) rotate(0deg); }
+      50% { transform: scale(1.05) rotate(5deg); }
+    }
+
+    /* Footer mejorado */
+    footer {
+      margin-top: 80px;
+      padding: 40px;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(20px);
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.2);
+      font-size: 18px;
+      color: rgba(255,255,255,0.95);
+      text-align: center;
+      font-weight: 400;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Efectos de partículas mejorados */
+    .magic-particles {
+      position: fixed;
+      pointer-events: none;
+      z-index: 1000;
+    }
+
+    .magic-particle {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: radial-gradient(circle, #ff6b6b 0%, transparent 70%);
+      border-radius: 50%;
+      animation: magicFloat 2s ease-out forwards;
+    }
+
+    @keyframes magicFloat {
+      0% {
+        opacity: 1;
+        transform: translate(0, 0) scale(0);
+      }
+      50% {
+        opacity: 1;
+        transform: translate(var(--dx), var(--dy)) scale(1);
+      }
+      100% {
+        opacity: 0;
+        transform: translate(calc(var(--dx) * 1.5), calc(var(--dy) * 1.5)) scale(0);
+      }
+    }
+
+    /* Responsive mejorado */
+    @media (max-width: 768px) {
+      .envelopes-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 0 10px;
+      }
+      
+      .envelope {
+        height: 180px;
+      }
+      
+      .message {
+        font-size: 15px;
+        padding: 25px;
+      }
+
+      .whatsapp-button {
+        padding: 20px 40px;
+        font-size: 16px;
+      }
+
+      .music-control {
+        width: 70px;
+        height: 70px;
+        font-size: 28px;
+      }
+
+      .img-decor {
+        width: 150px;
+        height: 150px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .envelope {
+        height: 160px;
+      }
+      
+      .message {
+        font-size: 14px;
+        padding: 20px;
+      }
+
+      .header-section {
+        margin-bottom: 40px;
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="geometric-bg"></div>
+  <div class="particles" id="particles"></div>
+  
+  <button class="music-control" onclick="toggleMusic()" id="musicBtn">🎵</button>
+  
+  <audio id="audio" preload="auto" loop>
+    <source src="lala.mp3" type="audio/mpeg" />
+    Tu navegador no soporta el audio HTML5.
+  </audio>
+
+  <div class="container">
+    <div class="header-section">
+      <h1>Para Ti, Brendita 💖</h1>
+      <p class="subtitle">En cada sobre se esconde un pedacito de lo que eres para mí.</p>
+    </div>
+
+    <div class="image-container">
+      <img src="ro.jpeg" alt="Decor" class="img-decor" />
+    </div>
+
+    <div class="envelopes-container">
+      <div class="envelope" onclick="openEnvelope(this)">
+        <div class="flap"></div>
+<div class="message">Desde que apareciste, mis días dejaron de ser los mismos — ahora despierto con ilusión 🌅</div>
+</div>
+
+<div class="envelope special" onclick="openEnvelope(this)">
+  <div class="flap"></div>
+  <div class="message">Tu sonrisa tiene esa magia que logra alumbrar hasta mi parte más apagada ✨</div>
+</div>
+
+<div class="envelope" onclick="openEnvelope(this)">
+  <div class="flap"></div>
+  <div class="message">Gracias por ser tú, así, sin filtros, tan auténtica y tan tú 💖</div>
+</div>
+
+<div class="envelope" onclick="openEnvelope(this)">
+  <div class="flap"></div>
+  <div class="message">No eres solo alguien importante… eres quien transformó todo en algo que vale la pena 🌟</div>
+</div>
+
+<div class="envelope special" onclick="openEnvelope(this)">
+  <div class="flap"></div>
+  <div class="message">Tu risa tiene el poder de calmar tormentas y convertirlas en calma 🎵</div>
+</div>
+
+<div class="envelope" onclick="openEnvelope(this)">
+  <div class="flap"></div>
+  <div class="message">A tu lado, hasta lo cotidiano se vuelve eterno 💝</div>
+</div>
+
+<div class="envelope" onclick="openEnvelope(this)">
+  <div class="flap"></div>
+  <div class="message">Si el destino me diera a elegir mil veces… siempre te volvería a escoger 🎁</div>
+</div>
+
+<div class="envelope special" onclick="openEnvelope(this)">
+  <div class="flap"></div>
+  <div class="message">Tu cariño es ese rincón en el mundo donde todo encaja y el corazón descansa 🏡</div>
+</div>
+
+<div class="envelope" onclick="openEnvelope(this)">
+  <div class="flap"></div>
+  <div class="message">A tu lado, cada día es una historia que quiero seguir escribiendo contigo 🗺️</div>
+</div>
+
+<div class="envelope" onclick="openEnvelope(this)">
+  <div class="flap"></div>
+  <div class="message">Tu luz es de esas que no ciegan… guían 🌙</div>
+</div>
+
+<div class="envelope" onclick="openEnvelope(this)">
+  <div class="flap"></div>
+  <div class="message">En tu abrazo, el mundo se detiene y todo parece tener sentido 🤗</div>
+</div>
+
+<div class="envelope special" onclick="openEnvelope(this)">
+  <div class="flap"></div>
+  <div class="message">Contigo aprendí que lo que parece imposible, también puede sentirse real 💕</div>
+</div>
+
+
+    <a href="https://wa.me/524961053624" class="whatsapp-button" target="_blank">
+      💬 Enviarle un mensaje
+    </a>
+
+    <footer>
+      Creado con todo el amor del mundo, dedicado exclusivamente para ti, Brendita 💘<br>
+      Porque mereces todo lo hermoso que la vida puede ofrecer
+    </footer>
+  </div>
+
+  <script>
+    let musicPlaying = false;
+    const audio = document.getElementById('audio');
+    const musicBtn = document.getElementById('musicBtn');
+
+    function toggleMusic() {
+      if (musicPlaying) {
+        audio.pause();
+        musicBtn.textContent = '🎵';
+        musicBtn.classList.remove('playing');
+        musicPlaying = false;
+      } else {
+        audio.play().catch(e => console.log('Audio play failed:', e));
+        musicBtn.textContent = '🎶';
+        musicBtn.classList.add('playing');
+        musicPlaying = true;
+      }
+    }
+
+    function openEnvelope(envelope) {
+      envelope.classList.toggle('open');
+      
+      if (envelope.classList.contains('open')) {
+        createMagicEffect(envelope);
+        // Vibración suave en dispositivos móviles
+        if (navigator.vibrate) {
+          navigator.vibrate(50);
+        }
+      }
+    }
+
+    function createMagicEffect(envelope) {
+      const rect = envelope.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      
+      // Crear partículas mágicas mejoradas
+      for (let i = 0; i < 30; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'magic-particle';
+        particle.style.left = centerX + 'px';
+        particle.style.top = centerY + 'px';
+        
+        const colors = ['#ff6b6b', '#feca57', '#48dbfb', '#ff9ff3', '#54a0ff'];
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        particle.style.background = `radial-gradient(circle, ${color} 0%, transparent 70%)`;
+        
+        const angle = (i / 30) * Math.PI * 2;
+        const velocity = 80 + Math.random() * 60;
+        const dx = Math.cos(angle) * velocity;
+        const dy = Math.sin(angle) * velocity;
+        
+        particle.style.setProperty('--dx', dx + 'px');
+        particle.style.setProperty('--dy', dy + 'px');
+        
+        document.body.appendChild(particle);
+        
+        setTimeout(() => {
+          particle.remove();
+        }, 2000);
+      }
+    }
+
+    // Crear partículas de fondo
+    function createBackgroundParticles() {
+      const particlesContainer = document.getElementById('particles');
+      
+      for (let i = 0; i < 80; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + 'vw';
+        particle.style.top = Math.random() * 100 + 'vh';
+        particle.style.animationDelay = Math.random() * 6 + 's';
+        particle.style.animationDuration = (Math.random() * 3 + 4) + 's';
+        particlesContainer.appendChild(particle);
+      }
+    }
+
+    // Efecto de entrada suave
+    function initPageAnimation() {
+      const elements = document.querySelectorAll('.envelope, .header-section, .image-container, .whatsapp-button, footer');
+      elements.forEach((el, index) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        setTimeout(() => {
+          el.style.transition = 'all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+          el.style.opacity = '1';
+          el.style.transform = 'translateY(0)';
+        }, index * 100);
+      });
+    }
+
+    // Inicializar efectos
+    document.addEventListener('DOMContentLoaded', function() {
+      createBackgroundParticles();
+      initPageAnimation();
+    });
+
+    // Iniciar música automáticamente después del primer clic
+    document.addEventListener('click', function() {
+      if (!musicPlaying) {
+        toggleMusic();
+      }
+    }, { once: true });
+
+    // Efecto de parallax suave
+    window.addEventListener('scroll', function() {
+      const scrolled = window.pageYOffset;
+      const parallaxElements = document.querySelectorAll('.geometric-bg, .particles');
+      
+      parallaxElements.forEach(element => {
+        const speed = 0.5;
+        element.style.transform = `translateY(${scrolled * speed}px)`;
+      });
+    });
+  </script>
+</body>
+</html>
